@@ -1,6 +1,5 @@
 ﻿using AuthVec.Application.Common.Behaviours;
 using AuthVec.Application.Common.Interfaces;
-using AuthVec.Application.TodoItems.Commands.CreateTodoItem;
 using Microsoft.Extensions.Logging;
 using Moq;
 using NUnit.Framework;

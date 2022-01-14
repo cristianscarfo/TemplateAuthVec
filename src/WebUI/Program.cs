@@ -34,7 +34,6 @@ public class Program
                 var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
                 await ApplicationDbContextSeed.SeedDefaultUserAsync(userManager, roleManager);
-                await ApplicationDbContextSeed.SeedSampleDataAsync(context);
             }
             catch (Exception ex)
             {
@@ -51,6 +50,6 @@ public class Program
 
     public static IHostBuilder CreateHostBuilder(string[] args) =>
         Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(webBuilder => 
+            .ConfigureWebHostDefaults(webBuilder =>
                 webBuilder.UseStartup<Startup>());
 }

@@ -1,5 +1,4 @@
 ﻿using AuthVec.Application.Common.Interfaces;
-using AuthVec.Infrastructure.Files;
 using AuthVec.Infrastructure.Identity;
 using AuthVec.Infrastructure.Persistence;
 using AuthVec.Infrastructure.Services;
@@ -42,12 +41,11 @@ public static class DependencyInjection
 
         services.AddTransient<IDateTime, DateTimeService>();
         services.AddTransient<IIdentityService, IdentityService>();
-        services.AddTransient<ICsvFileBuilder, CsvFileBuilder>();
 
         services.AddAuthentication()
             .AddIdentityServerJwt();
 
-        services.AddAuthorization(options => 
+        services.AddAuthorization(options =>
             options.AddPolicy("CanPurge", policy => policy.RequireRole("Administrator")));
 
         return services;
